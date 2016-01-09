@@ -1,6 +1,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <unordered_set>
 
 void solution_1(std::vector<int>  & arr,int const k)
 {
@@ -65,15 +66,15 @@ void solution_3(std::vector<int>  & arr,int const k)
         return;
     }
 
-    std::vector<int> seen;
+    std::unordered_set<int> seen;
 
     for(size_t i=0;i<arr.size();++i)
     {
         int target = k - arr[i];
-        auto res = std::find(seen.begin(),seen.end(),target);
+        auto res = seen.find(target);
         if(res == seen.end())
         {
-            seen.push_back(arr[i]);
+            seen.insert(arr[i]);
         }
         else
         {
