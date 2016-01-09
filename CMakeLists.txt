@@ -49,3 +49,4 @@ endif()
 
 add_subdirectory(ArrayPairSum)
 add_subdirectory(MatrixRegionSum)
+add_subdirectory(LargestContinuousSum)
